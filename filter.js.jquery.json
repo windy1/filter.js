@@ -1,0 +1,38 @@
+{
+    "name": "filter.js",
+    "title": "filter.js",
+    "description": "filter.js is a small and simple jQuery plugin that makes resource filtering a piece of cake. With filter.js you can filter resources that are in an element while simultaneously retrieving additional resources that may not be displayed in a table. filter.js allows you to filter paginated data that is not loaded on the client yet.",
+    "keywords": [
+        "filter",
+        "ajax",
+        "filtering",
+        "resources",
+        "table",
+        "mit"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Walker Crouse",
+        "url": "http://walkercrou.se"
+    },
+    "maintainers": [
+        {
+            "name": "Walker Crouse",
+            "email": "walkercrouse@hotmail.com",
+            "url": "http://walkercrou.se"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/windy1/filter.js/blob/master/LICENSE.md"
+        }
+    ],
+    "bugs": "https://github.com/windy1/filter.js/issues",
+    "homepage": "https://github.com/windy1/filter.js",
+    "docs": "https://github.com/windy1/filter.js/blob/master/README.md",
+    "download": "https://raw.githubusercontent.com/windy1/filter.js/master/jquery.filter.js",
+    "dependencies": {
+        "jquery": ">=1.8.2"
+    }   
+}

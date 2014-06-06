@@ -77,6 +77,8 @@
 
         // filter data on keyup
         $(this).keyup(function() {
+            currentPage = 1;
+
             if (options.before != null) {
                 options.before();
             }

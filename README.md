@@ -40,7 +40,8 @@ filter.js is relatively easy to setup.
 
             buildEntries: function(json) {
                 currentPage = 1;
-                return buildCompanyEntries(json);
+                var html = ...
+                return html;
             }
         });
         </script>

@@ -1,7 +1,7 @@
 {
     "name": "filter.js",
     "title": "filter.js",
-    "description": "filter.js is a small and simple jQuery plugin that makes resource filtering a piece of cake. With filter.js you can filter resources that are in an element while simultaneously retrieving additional resources that may not be displayed in a table. filter.js allows you to filter paginated data that is not loaded on the client yet.",
+    "description": "Filter.js is a easy-to-use jQuery plugin that makes filtering a large amount of resources a piece of cake. With Filter.js you can filter resources that are in an element while simultaneously retrieving additional resources that may not be displayed in a table. filter.js allows you to filter paginated data that is not loaded on the client yet.",
     "keywords": [
         "filter",
         "ajax",

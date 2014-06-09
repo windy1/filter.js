@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Filter.js</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/filter.js.css" rel="stylesheet">
+        <link href="css/prettify.css" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <a href="https://github.com/windy1/filter.js"><img style="position: absolute; top: 0; right: 0; border: 0;" 
+           src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
+           alt="Fork me on GitHub" 
+           data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+        </a>
+
+        <div class="container">
+            <div id="header">
+                <h1 class="title">Filter.js</h1>
+
+                <p class="summary">Filter.js is a easy-to-use jQuery plugin that makes filtering a large amount of 
+                resources a piece of cake. With Filter.js you can filter resources that are in an element while 
+                simultaneously retrieving additional resources that may not be displayed in a table. filter.js allows 
+                you to filter paginated data that is not loaded on the client yet.</p>
+            </div>
+
+            <div class="content">
+                <h2 class="title" style="margin-bottom: 0px;">Demos</h2>
+
+                <p class="summary" style="text-align: center; margin-bottom: 20px;">
+                    (made in conjunction with twitter bootstrap and 
+                    <a href="https://github.com/windy1/more.js">more.js</a>)
+                </p>
+
+                <div class="panel panel-primary" style="width: 50%; margin-left: auto; margin-right: auto;">
+                    <div class="panel-heading">
+                        <input type="text" placeholder="Filter employees&hellip;" class="form-control filter">
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Last name</th>
+                                    <th>First name</th>
+                                    <th>Middle initial</th>
+                                    <th>Gender</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                            <tbody class="employees">
+                                <?php
+                                $employees = Employee::paginate(5);
+                                foreach ($employees as $employee) {
+                                    echo '<tr>'.PHP_EOL
+                                       . '<td>'.$employee->last_name.'</td>'.PHP_EOL
+                                       . '<td>'.$employee->first_name.'</td>'.PHP_EOL
+                                       . '<td>'.$employee->middle_initial.'</td>'.PHP_EOL
+                                       . '<td>'.$employee->gender.'</td>'.PHP_EOL
+                                       . '<td>'.$employee->age.'</td>'.PHP_EOL;
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="more btn btn-default btn-lg btn-block" data-loading-text="Loading&hellip;">
+                            More
+                        </button>
+                    </div>
+                </div>
+
+<pre class="prettyprint lang-javascript" style="width: 50%; margin-left: auto; margin-right: auto;">
+  var currentPage = 1;
+
+  $(".filter").filter({
+      url: "{{URL::to('employees/json')}}",
+      dataType: 'json',
+      table: ".employees",
+      queryParam: 'last_name',
+
+      // Function that builds the html from the returned data. 
+      // Takes a data parameter.
+      buildEntries: buildEntries
+  });
+</pre>
+
+            <div class="divider" style="color: gray;">Copyright &copy; 2014 Walker Crouse</div>
+        </div>
+
+        <div id="map" style="display: hidden;"></div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.filter.js"></script>
+        <script src="js/jquery.more.js"></script>
+        <script src="js/prettify.js"></script>
+
+        <script>
+        function buildEntries(json) {
+            var employees = json.data;
+            var html = "";
+            for (var i = 0; i < employees.length; i++) {
+                var employee = employees[i];
+                html += '<tr>\n'
+                      + '<td>'+employee.last_name+'</td>\n'
+                      + '<td>'+employee.first_name+'</td>\n'
+                      + '<td>'+employee.middle_initial+'</td>\n'
+                      + '<td>'+employee.gender+'</td>\n'
+                      + '<td>'+employee.age+'</td>\n'
+                      + '</tr>\n';
+            }
+            return html;
+        }
+
+        var currentPage = 1;
+
+        $(".filter").filter({
+            url: "{{URL::to('employees/json')}}",
+            dataType: 'json',
+            table: ".employees",
+            queryParam: 'last_name',
+            buildEntries: buildEntries
+        });
+
+        $(".more").more({
+            url: "{{URL::to('employees/json')}}",
+            input: ".filter",
+            table: ".employees",
+            queryParam: "last_name",
+            dataType: "json",
+            bootstrap: true,
+            buildEntries: buildEntries
+        });
+
+        $(function() {
+            prettyPrint();
+        });
+        </script>
+    </body>
+</html>

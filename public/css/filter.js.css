@@ -32,14 +32,38 @@ h2.title {
 }
 
 #header {
-    padding-bottom: 20px;
     border-bottom: 1px solid #D6D6D6;
 }
 
 .divider {
+    padding: 5px;
     height: 20px;
     margin-top: 20px;
     border-top: 1px solid #D6D6D6;
+    color: gray;
+}
+
+.tutorial > p {
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+}
+
+.pull-down {
+    margin-top: 20px;
+}
+
+.code {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fjs-nav {
+    width: 360px; 
+    position: fixed;
+    right: 10px;
+    top: 245px;
 }
 
 /* desert scheme ported from vim to google prettify */

@@ -45,7 +45,6 @@
         }
 
         // build options
-        var query = "";
         var defaults = {
             url: null,          // NOT NULL -- URL to fetch and filter resources from
             dataType: "json",   // NOT NULL -- AJAX dataType
@@ -79,12 +78,8 @@
         $(this).keyup(function() {
             currentPage = 1;
 
-            if (options.before != null) {
-                options.before();
-            }
-
             // get the new query
-            query = $(this).val();
+            var query = $(this).val();
 
             // build AJAX request
             var request = {
@@ -99,6 +94,10 @@
                     table.html(options.buildEntries(data));
                 }
             };
+
+            if (options.before != null) {
+                options.before(request);\
+            }
 
             // append data
             var data = request["data"];

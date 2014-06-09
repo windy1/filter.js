@@ -96,7 +96,7 @@
             };
 
             if (options.before != null) {
-                options.before(request);\
+                options.before(request);
             }
 
             // append data

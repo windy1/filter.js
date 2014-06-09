@@ -29,7 +29,7 @@
 
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <input type="text" placeholder="Filter restaurants&hellip;" class="form-control">
+                        <input type="text" placeholder="Filter employees&hellip;" class="form-control">
                     </div>
                     <div class="panel-body">
                         <table class="table">

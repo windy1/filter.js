@@ -24,9 +24,6 @@
                  data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
         </a>
 
-        <div class="fjs-nav">
-        </div>
-
         <div class="container">
             <!-- Header -->
             <div id="header">

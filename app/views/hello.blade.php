@@ -125,7 +125,7 @@
   &lt;/table&gt;
 </pre>
 
-            <div class="tutorial pull-down"><p>Add jquery.filter.js and jquery.(min).js to your template</p></div>
+            <div class="tutorial pull-down"><p>Add jquery.filter.js and jquery(.min).js to your template</p></div>
 
 <pre class="prettyprint lang-html code">
   &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
@@ -138,6 +138,8 @@
             </div>
 
 <pre class="prettyprint lang-javascript code">
+var currentPage = 1; // This must be defined in the same scope as the plugin
+
 $("#filter").filter({
   // URL to filter resources from. 
   url: "http://example.com/resources/json", 

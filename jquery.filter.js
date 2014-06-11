@@ -57,6 +57,14 @@
         };
         options = $.extend(defaults, options);
 
+        if (options.url == null) {
+            options['url'] = $(this).attr('data-url');
+        }
+
+        if (options.table == null) {
+            options['table'] = $(this).attr('data-table');
+        }
+
         // argument checking
         var notNull = {
             url: "no specified URL to filter resources from",

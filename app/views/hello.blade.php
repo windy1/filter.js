@@ -96,10 +96,6 @@
   });
 </pre>
 
-            <div style="text-align: center;">
-                <a href="view-source:{{URL::to('/')}}" target="_blank">View full source</a>
-            </div>
-
             <div class="divider"></div>
 
             <!-- Tutorial -->
@@ -135,60 +131,65 @@
             </div>
 
 <pre class="prettyprint lang-javascript code">
-var currentPage = 1; // This must be defined in the same scope as the plugin
+  // This must be defined in the same scope as the plugin
+  var currentPage = 1; 
 
-$("#filter").filter({
-  // URL to filter resources from. 
-  url: "http://example.com/resources/json", 
+  $("#filter").filter({
+    // URL to filter resources from. 
+    url: "http://example.com/resources/json", 
 
-  // AJAX dataType. Default: "json".
-  dataType: "json",
+    // AJAX dataType. 
+    dataType: "json",
 
-  // table to populate, does not actually have to be a &lt;table&gt; element.
-  table: "#orchards",
+    // table to populate
+    // does not actually have to be a &lt;table&gt; element.
+    table: "#orchards",
 
-  // Parameter that determines the results of the filter. Default: "q".
-  queryParam: "orchard_name",
+    // Parameter that determines the results of the filter. 
+    queryParam: "orchard_name",
 
-  // Parameter that paginates the data. Default: "page".
-  pageParam: "p", // defaults to 'page'
+    // Parameter that paginates the data. 
+    pageParam: "p",
 
-  // callback called before the AJAX request is sent.
-  before: function(request) {
-      ...
-  },
+    // callback called before the AJAX request is sent.
+    before: function(request) {
+        ...
+    },
 
-  // callback called after AJAX request is received, regardless of the result.
-  after: function() {
-      ...
-  },
+    // callback called after AJAX request is received, 
+    // regardless of the result.
+    after: function() {
+        ...
+    },
 
-  // callback to build HTML from the returned data.
-  buildEntries: function(json) {
-      var html = ...
-      return html;
-  }
-});
+    // callback to build HTML from the returned data.
+    buildEntries: function(json) {
+        var html = ...
+        return html;
+    }
+  });
 </pre>
 
             <div class="tutorial pull-down">
                 <p>Integrate with <a href="https://github.com/windy1/more.js">more.js</a> (optional)</p>
             </div>
 
-<pre class="prettyprint lang-javascript code">
+<pre class="prettyprint lang-html code">
 &lt;button class="btn btn-lg btn-default btn-block" id="more" 
-           data-loading-text="Loading&hellip;"&gt;
+        data-loading-text="Loading&hellip;"&gt;
 
+&lt;script&gt;
 $("#more").more({
     url: "http://example.com/resources/json",
     table: "#orchards",
 
     ...
 
-    // Set this to false if you are not using twitter bootstrap's "loading" 
-    // button plugin.
+    // Set this to false if you are not using twitter 
+    // bootstrap's "loading" button plugin.
     bootstrap: true
 });
+&lt;/script&gt;
 </pre>
 
             <div class="divider"></div>
@@ -210,7 +211,7 @@ $("#more").more({
                 </div>
             </div>
 
-            <div class="divider">&copy; {{date('Y')}} Walker Crouse</div>
+            <div class="divider">&copy; {{date('Y')}} Walker Crouse <a href="http://walkercrou.se">walkercrou.se</div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

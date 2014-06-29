@@ -194,6 +194,93 @@ $("#more").more({
 
             <div class="divider"></div>
 
+            <h2 class="title">Settings</h2>
+            <table class="table" style="width: 50%; margin-left: auto; margin-right: auto;">  
+                <thead>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>url</td>
+                        <td>String</td>
+                        <td>None</td>
+                        <td>Yes</td>
+                        <td>The URL to fetch and filter the resources from every key press.</td>
+                    </tr>
+                    <tr>
+                        <td>dataType</td>
+                        <td>String</td>
+                        <td>json</td>
+                        <td>Yes</td>
+                        <td>The data type to parse that is being received from the specified URL.</td>
+                    </tr>
+                    <tr>
+                        <td>table</td>
+                        <td>String</td>
+                        <td>None</td>
+                        <td>Yes</td>
+                        <td>
+                            The DOM element to populate the filtered entries with. Does not need to be an actual table
+                            element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>buildEntries</td>
+                        <td>Function</td>
+                        <td>None</td>
+                        <td>Yes</td>
+                        <td>
+                            Function to create HTML entries out of the returned data from each AJAX request. This 
+                            function should return the HTML to include in the specified "table" element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>queryParam</td>
+                        <td>String</td>
+                        <td>q</td>
+                        <td>Yes</td>
+                        <td>
+                            The URL parameter to include the query string in for filtering when sending an AJAX request.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>pageParam</td>
+                        <td>String</td>
+                        <td>page</td>
+                        <td>Yes</td>
+                        <td>
+                            The URL parameter to include the page number for pagination of returned data. This uses the
+                            currentPage variable that must be defined in the same scope as the plugin. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>before</td>
+                        <td>Function</td>
+                        <td>None</td>
+                        <td>No</td>
+                        <td>
+                            Function to call before each AJAX request is sent. The actual AJAX request is passed to this
+                            function.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>after</td>
+                        <td>Function</td>
+                        <td>None</td>
+                        <td>No</td>
+                        <td>Function to call after every AJAX request, regardless of the result.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="divider"></div>
+
             <h2 class="title">Download</h2>
 
             <div style="text-align: center;">
